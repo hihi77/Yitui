@@ -1,0 +1,106 @@
+<!--<a><li class="itme-A">-->
+
+<!--</li></a>-->
+<ion-view view-title="活动">
+    <ion-content>
+        <!--中间内容-->
+        <ul class="list-style-A list-style-B">
+            <a href="#/tab/activity/selectType"><li class="itme-A">
+                选择类型(必选)
+                <p class="select-text textOverHide" ng-show="activityEphemeralData['选择类型']?true:false">{{activityEphemeralData["选择类型"]}}</p>
+                <i class="ion-chevron-right size-12 icon-right" ng-if="true"></i>
+            </li></a>
+            <a><li class="itme-A">
+                活动主题
+                <label class="info-input">
+                    <input class="init" placeholder="单行输入"  ng-model="activityEphemeralData['活动主题']" name="活动主题">
+                </label>
+            </li></a>
+        </ul>
+
+        <ul class="list-style-A list-style-B">
+            <a><li class="itme-A">
+                报名截止时间
+                <input class="init date" ng-if="true" type="datetime-local"  ng-model="activityEphemeralData['报名截止时间']" name="报名截止时间">
+            </li></a>
+            <a><li class="itme-A">
+                活动开始时间
+                <input class="init date" ng-if="true" type="datetime-local"  ng-model="activityEphemeralData['活动开始时间']" name="活动开始时间">
+            </li></a>
+            <a><li class="itme-A">
+                活动结束时间
+                <input class="init date" ng-if="true" type="datetime-local"  ng-model="activityEphemeralData['活动结束时间']" name="活动结束时间">
+            </li></a>
+        </ul>
+
+        <ul class="list-style-A list-style-B">
+            <a><li class="itme-A">
+                活动方式
+            </li></a>
+            <a><li class="itme-A">
+                线上活动
+                <label class="info-input">
+                    <input class="init" placeholder="输入地址"  ng-model="activityEphemeralData['线上活动地址']" name="线上活动地址">
+                </label>
+                <i class="ion-ios-location size-12 icon-right" ng-if="true"></i>
+            </li></a>
+            <a><li class="itme-A"  ng-click="activityEphemeralData['线下活动']=!activityEphemeralData['线下活动']">
+                线下活动
+                <i class="{{activityEphemeralData['线下活动']?'ion-android-checkbox-outline':'ion-android-checkbox-outline-blank'}} size-16 icon-right" ng-if="true"></i>
+            </li></a>
+            <a><li class="itme-A">
+                活动人数上限
+                <label class="info-input">
+                    <input class="init" placeholder="单行输入" type="tel"  ng-model="activityEphemeralData['活动人数上限']" name="活动人数上限">
+                </label>
+            </li></a>
+        </ul>
+
+        <ul class="list-style-A list-style-B">
+            <a><li class="itme-A">
+                活动费用
+                <label class="info-input">
+                    <input class="init" placeholder="元"  ng-model="activityEphemeralData['活动费用']" name="活动费用">
+                </label>
+            </li></a>
+            <a><li class="itme-A">
+                活动性质
+                <label class="info-select">
+                    <p class="text">{{activityEphemeralData['活动性质']||'请选择'}}</p>
+                    <i class="ion-arrow-down-b  icon-right"></i>
+                    <select class="init" ng-model="activityEphemeralData['活动性质']">
+                        <option ng-repeat="data in activityKind">{{data}}</option>
+                    </select>
+                </label>
+            </li></a>
+            <a href="#/tab/activity/additionalRegistration"><li class="itme-A">
+                设置报名附加信息
+                <i class="ion-chevron-right size-12 icon-right" ng-if="true"></i>
+            </li></a>
+        </ul>
+        <ul class="list-style-A list-style-B">
+            <a href="#/tab/activity/satisfaction"><li class="itme-A">
+                活动满意度评价
+                <i class="ion-chevron-right size-12 icon-right" ng-if="true"></i>
+            </li></a>
+            <a href="#/tab/activity/teachingSatisfaction"><li class="itme-A">
+                授课老师满意度评价
+                <i class="ion-chevron-right size-12 icon-right" ng-if="true"></i>
+            </li></a>
+        </ul>
+
+        <div class="activityDetailed">
+            <h1 class="title">活动详情</h1>
+            <div class="detailedBox">
+                <div class="detailedText">
+                    <textarea class="init" ng-model="activityEphemeralData['活动详情'].text" placeholder="多行输入"></textarea>
+                </div>
+                <div class="upload-photo-control" ng-model="save" upload-photo-control>
+
+                </div>
+            </div>
+        </div>
+
+        <button class="button button-block button-light" on-touch="publishEvent()">发布活动</button>
+    </ion-content>
+</ion-view>

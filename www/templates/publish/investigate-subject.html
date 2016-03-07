@@ -1,0 +1,38 @@
+<ion-view view-title="第{{+sub+1}}题">
+    <ion-content style="background: #fff;">
+        <!--中间内容-->
+        <div class="questionBox">
+            <div class="optionBox">
+                <p class="option {{nowData.type=='单选'?'hover':''}}" ng-click="nowData.type='单选'">单选</p>
+                <p class="option {{nowData.type=='多选'?'hover':''}}" ng-click="nowData.type='多选'">多选</p>
+                <p class="option {{nowData.type=='问答'?'hover':''}}" ng-click="nowData.type='问答'">问答</p>
+            </div>
+        </div>
+        <div class="question-input" ng-show="nowData.type!='问答'">
+            <div class="input-box">
+                <label class="input">
+                    <input class="init" placeholder="题目：今天你午休了吗？"  ng-model="$parent.nowData.question">
+                </label>
+            </div>
+            <div class="input-box" ng-repeat="text in nowData.option">
+                {{text}}
+                <i class="ion-minus icon-right" ng-click="removeOption(text)"></i>
+            </div>
+            <div class="input-box">
+                <label class="input">
+                    <input class="init" ng-model="$parent.nowOptionText" placeholder="填选项处：有">
+                </label>
+                <i class="ion-plus icon-right" ng-click="addOption(this)"></i>
+            </div>
+        </div>
+        <div class="question-input question-textarea" ng-show="nowData.type=='问答'">
+            <div class="input-box">
+                <textarea class="init" placeholder="请输入" ng-model="$parent.nowData.text"></textarea>
+            </div>
+        </div>
+        <div class="question-button-box" style="position: absolute;left: 0;top: {{top}}px;width: 100%;border: 1px solid #BBBBBB">
+            <a style="width: 75%;float: left;box-sizing: border-box;border-right: 1px solid #BBBBBB"><button class="button button-block button-light" style="margin: 0;" ng-click="nextQuestion()">下一题</button></a>
+            <a href="#/tab/publish/saveInfoOk/发布成功"  style="width: 25%;float: left;"><button class="button button-block button-light" style="color: #ff9800;margin: 0;" ng-click="saveQuestion()">发布</button></a>
+        </div>
+    </ion-content>
+</ion-view>
