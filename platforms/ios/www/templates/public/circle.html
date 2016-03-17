@@ -1,0 +1,18 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+    <div class="myCircle">
+      <div search>
+
+      </div>
+      <ul class="list-style-E">
+        <li class="list-item" ng-repeat="data in circles" ng-show="!data.hide">
+          <div class="photo"><img ng-src="{{data.photoUrl}}"></div>
+          <div class="info">
+            <p class="title">{{data.title}}</p>
+            <p class="introduction">{{data.introduction}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="新用户注册" align-title="left">
+    <ion-content >
+
+       
+        <div class="list">
+
+
+      
+  <div class="item item-input">
+              
+            </div>
+
+       </div>
+
+
+
+<form name ="postsForm">
+       <div class="item item-input">
+                <span class="input-label">手机号＋86</span>
+                <input  placeholder="输入短信验证手机号" type="tel" name="ninpt" ng-model="$parent.user.phone"  required
+                   ng-minlength="11" ng-maxlength="11">
+          </div>
+         <!--  <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="postsForm.ninpt.$error&&!postsForm.ninpt.$dirty">输入手机号有误</span> -->
+       </form>
+ <button ng-click="CheckbyPhoneNuber()" class="button button-full button-positive"  ng-disabled="postsForm.$invalid"
+           >下一步</button>
+            
+        
+
+  
+ <div>    
+ 
+　<p>点击上面“下一步”按钮即表示您同意 <a ng-click=""  >《服务协议》</a> </p>
+
+</div>
+
+ 
+    </ion-content>
+</ion-view>

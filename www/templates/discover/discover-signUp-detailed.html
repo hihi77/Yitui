@@ -1,0 +1,66 @@
+<ion-view view-title="活动">
+  <ion-content style="background: #fff">
+    <div class="activityDetailedBox">
+      <div class="image">
+        <img src="http://g.hiphotos.baidu.com/image/h%3D200/sign=55c721bb29dda3cc14e4bf2031e83905/32fa828ba61ea8d3e3eecc20900a304e241f58c1.jpg">
+        <a href="#/tab/{{pageMarking}}/{{pageMarking}}-signUp-input/{{id}}"><p class="signUp">活动报名</p></a>
+      </div>
+      <div class="detailed-list-box">
+        <ul class="detailed-list">
+          <li class="list-item">
+            <p class="text">
+              <i class="ion-calendar icon"></i>&nbsp;&nbsp;
+              {{signUpDetailed.activityTime}}
+            </p>
+          </li>
+          <li class="list-item">
+            <a href="#/tab/{{pageMarking}}-map/{{id}}"><p class="text">
+              <i class="ion-ios-paperplane icon"></i>&nbsp;&nbsp;
+              {{signUpDetailed.activeAddress?"线下活动":"线上活动"}}
+              <i class="ion-location icon" style="float: right"></i>
+            </p></a>
+          </li>
+          <li class="list-item">
+            <p class="text">
+              <i class="ion-social-yen icon"></i>&nbsp;&nbsp;
+              {{signUpDetailed.price?signUpDetailed.price+"元":"免费"}}
+            </p>
+          </li>
+          <li class="list-item">
+            <p class="text">
+              <i class="ion-person icon"></i>&nbsp;&nbsp;
+              {{signUpDetailed.signUpCount}}人<span class="yellow">({{signUpDetailed.signUpSuccess}}报名成功)</span>
+            </p>
+          </li>
+        </ul>
+        <ul class="detailed-list">
+          <li class="list-item">
+            <p class="left-text">活动评价</p>
+            <a href="#/tab/{{pageMarking}}/{{pageMarking}}-activityEvaluation/{{id}}"><p class="right-text">立即评价</p></a>
+          </li>
+          <li class="list-item">
+            <p class="text">综合评分:{{signUpDetailed.overallMerit}}</p>
+            <p class="text">评价人数:{{signUpDetailed.evaluationNumber}}</p>
+          </li>
+        </ul>
+        <ul class="detailed-list">
+          <li class="list-item">
+            <p class="left-text">活动详情</p>
+          </li>
+          <li class="list-item" style="height:{{develop?'auto':'120px'}};border-bottom: none">
+            <p class="text">
+             {{signUpDetailed.eventDetails}}
+            </p>
+          </li>
+        </ul>
+        <button class="button button-style1" ng-click="develop=!develop">查看完整介绍</button>
+      </div>
+      <div class="foot-registrationSuccess">
+        <p class="text">{{signUpDetailed.signUpSuccess}}人报名成功</p>
+        <div class="imageBox">
+          <p class="heardPhone" ng-repeat="url in signUpDetailed.signUpSuccessImages"><img src="{{url}}"></p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

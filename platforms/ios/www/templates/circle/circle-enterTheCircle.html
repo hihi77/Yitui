@@ -1,0 +1,231 @@
+<div class="backgroundLayer animated fadeIn" ng-init="hideLayer=true" ng-click="hideLayer=true" ng-show="!hideLayer">
+  <div class="publishButtonBox">
+    <a href="#/tab/toHire-circle"><div class="noeButton animated bounceInRight" style="-webkit-animation-delay: 0.2s;-webkit-animation-direction: 1s">
+      <p class="type">才聘</p>
+      <p class="icon"><img src=""></p>
+    </div></a>
+    <a href="#/tab/activity-circle"><div class="noeButton animated bounceInRight" style="-webkit-animation-delay: 0.4s;-webkit-animation-direction: 1s">
+      <p class="type">活动</p>
+      <p class="icon"><img src=""></p>
+    </div></a>
+    <a href="#/tab/investigate-circle"><div class="noeButton animated bounceInRight" style="-webkit-animation-delay: 0.6s;-webkit-animation-direction: 1s">
+      <p class="type">调查</p>
+      <p class="icon"><img src=""></p>
+    </div></a>
+    <a href="#/tab/information-circle"><div class="noeButton animated bounceInRight" style="-webkit-animation-delay: 0.8s;-webkit-animation-direction: 1s">
+      <p class="type">信息</p>
+      <p class="icon"><img src=""></p>
+    </div></a>
+  </div>
+</div>
+<ion-header-bar class="bar-stable bar bar-header" align-title="center">
+  <button ng-click="backClick();" class="button back-button  buttons  button-clear header-item">
+    <i class="icon ion-ios-arrow-back"></i>
+    后退
+  </button>
+  <div class="title title-center header-item">
+    圈子
+  </div>
+  <div class="buttons buttons-right header-item"><span class="right-buttons">
+        <button class="button" ng-click="toolClick();">
+          <i class="ion-person-stalker size-24"></i>
+        </button>
+      </span></div>
+</ion-header-bar>
+<ion-header-bar class="heardClass">
+  <div class="chatPage">
+    <div class="heardTool">
+      <a href="#tab/circle-noticePage/{{id}}">
+        <div class="tool">
+          <p class="text">通知</p>
+        </div>
+      </a>
+      <a href="#tab/circle-activity/{{id}}">
+        <div class="tool">
+          <p class="text">活动</p>
+        </div>
+      </a>
+      <a href="#/tab/circle/circle-toHire/{{id}}">
+        <div class="tool">
+          <p class="text">才聘</p>
+        </div>
+      </a>
+      <a href="#/tab/circle-questionnaire/{{id}}">
+        <div class="tool">
+          <p class="text">调查</p>
+        </div>
+      </a>
+      <a href="#/tab/circle-information/{{id}}">
+        <div class="tool">
+          <p class="text">信息</p>
+        </div>
+      </a>
+      <div class="tool" ng-click="hideLayer=false">
+        <p class="text"><i class="ion-edit"></i></p>
+      </div>
+    </div>
+  </div>
+</ion-header-bar>
+<ion-content>
+  <div class="contentClass"></div>
+  <ion-slide-box>
+    <ion-slide>
+      <div class="box blue"><h1>BLUE</h1></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box yellow"><h1>YELLOW</h1></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box pink"><h1>PINK</h1></div>
+    </ion-slide>
+  </ion-slide-box>
+  <div class="chatContent">
+    <div class="dialog">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+    <div class="dialog other">
+      <p class="photo"><img src=""></p>
+      <div class="text">
+        <span class="arrow"></span>
+        <p class="textContent">
+          你好啊
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer-bar class="bar-footer-editMessage">
+  <div class="editMessage">
+    <button class="button button-left"><i class="ion-mic-a icon-left"></i></button>
+    <div class="edit" ng-focus="focus=true" ng-blur="focus=false" contenteditable="true"></div>
+    <div class="button-right button button-right1">
+      <i class="ion-ios-plus-outline size-24"></i>
+    </div>
+    <button class="button button-right">
+      发送
+    </button>
+  </div>
+</ion-footer-bar>

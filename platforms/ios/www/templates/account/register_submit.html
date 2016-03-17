@@ -1,0 +1,37 @@
+<ion-view view-title="填写用户信息" align-title="left">
+    <ion-content >
+       
+        <div class="list">
+      　<p align="center"> 开始全新体验之旅</p>
+  <label class="item item-input">
+              
+            </label>
+
+       </div>
+
+     <form name ="postsForm">
+          <div class="item item-input">
+                <span class="input-label">您的昵称</span>
+                <input  placeholder="输入您的昵称" type="text"  ng-model="$parent.user.nickname" required
+                 >
+             </div>
+              <div class="item item-input">
+              <span class="input-label">设置密码</span>
+                <input  placeholder="输入最少6位密码" type="password"  ng-model="$parent.user.password"  required
+                   ng-minlength="6">
+                   </div>
+                   <div class="item item-input">
+            <span class="input-label">确认密码</span>
+                <input  placeholder="确认密码" type="password"  ng-model="obj.confirm"  required
+                   ng-minlength="6">
+
+          </div>
+       </form>
+     
+ <button ng-click="Tosubmit()" class="button button-full button-positive"  ng-disabled="postsForm.$invalid"
+           >下一步</button>
+           
+
+
+    </ion-content>
+</ion-view>

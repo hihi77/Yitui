@@ -1,0 +1,36 @@
+<ion-view view-title="Login" align-title="center">
+<!-- style="background: url(img/login.jpg) center; background-size: cover;"   -->
+    <ion-content >
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h2>才商连联</h2>
+            </div>
+        </div>
+       <form name ="postsForm">
+         <div class="item item-input">
+                <span class="input-label">手机号＋86</span>
+                <input  placeholder="输入注册手机号" type="tel" ng-model="$parent.user.phone"  required
+                   ng-minlength="11" ng-maxlength="11">
+              
+
+          </div>  
+          <div class="item item-input">
+          <span class="input-label">密码</span>
+                <input placeholder="输入密码" type="password" ng-model="$parent.user.password"  
+                 >
+                   </div>
+         <!--  <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="postsForm.ninpt.$error&&!postsForm.ninpt.$dirty">输入手机号有误</span> -->
+       </form>
+ <button ng-click="Checkin()" class="button button-full button-positive"  ng-disabled="postsForm.$invalid"
+           >登录</button>
+ 
+
+
+        <div class="button-bar social-login">
+            <button  ng-click="WeChatSSO()" class="button button-small button-border icon-left  button-assertive-900"> 微信登录</button>
+            <button    ng-click="SmSSO()"   class="button button-small button-border icon-left  button-calm-900"> 验证码登录</button>
+            <button ui-sref="register_new" class="button button-small button-border icon-left  button-positive-900">新用户注册</button>
+        </div>
+    </ion-content>
+</ion-view>

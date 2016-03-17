@@ -7,30 +7,33 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+        "cn.rongcloud.imlib": {
+            "PACKAGE_NAME": "com.cssll1"
         },
         "com.synconset.imagepicker": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.cssll1"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.starter.sailey"
-        },
-        "xu.li.cordova.wechat": {
-            "WECHATAPPID": "wx45901e676c0ff12a",
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.ionicframework.starter.sailey"
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.cssll1"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.starter"
+            "PACKAGE_NAME": "com.cssll1"
         },
-        "cn.rongcloud.imlib": {
-            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.cssll1"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.cssll1"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.cssll1"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.cssll1"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wx79bcf8b025734922",
+            "PACKAGE_NAME": "com.cssll1"
         }
     },
     "dependent_plugins": {}

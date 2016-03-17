@@ -1,0 +1,37 @@
+<ion-view view-title="教育背景">
+  <ion-content>
+    <div class="user-projectExperience">
+      <ul class="list-style-D">
+        <li class="list-item">
+          <p class="leftText">学校名称</p>
+          <p class="rightText"><input class="init" ng-model="educationalBackground.schoolName" placeholder="请输入学校名称"></p>
+        </li>
+        <li class="list-item">
+          <p class="leftText">开始时间</p>
+          <p class="rightText"><input class="init" ng-model="educationalBackground.startTime"  type="datetime-local"></p>
+        </li>
+        <li class="list-item">
+          <p class="leftText">结束时间</p>
+          <p class="rightText"><input class="init" ng-model="educationalBackground.endTime"  type="datetime-local"></p>
+        </li>
+        <li class="list-item">
+          <p class="leftText">专业</p>
+          <p class="rightText"><input class="init" ng-model="educationalBackground.specialty" placeholder="请输入专业"></p>
+        </li>
+        <li class="list-item">
+          <p class="leftText">学历</p>
+          <p class="rightText"><input class="init" ng-model="educationalBackground.recordOfFormalSchooling"  placeholder="请输入学历"></p>
+        </li>
+        <li class="list-item">
+          <p class="leftText">统招</p>
+          <p class="rightText">
+            <select class="init" ng-model="educationalBackground.theEntranceExamination">
+              <option>是</option>
+              <option>否</option>
+            </select>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

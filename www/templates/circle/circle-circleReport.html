@@ -1,0 +1,22 @@
+<ion-header-bar class="bar-stable bar bar-header" align-title="center">
+  <button ng-click="backClick();" class="button back-button  buttons  button-clear header-item" >
+    <i class="icon ion-ios-arrow-back"></i>
+    后退
+  </button>
+  <div class="title title-center header-item" >
+    举报
+  </div>
+</ion-header-bar>
+<ion-content>
+  <div class="notice">
+    <p class="title">请输入本人手机号</p>
+    <p class="textarea" style="height: 32px"><input class="init" ng-model="$parent.phone" placeholder="请输入手机号"></p>
+  </div>
+  <div class="notice">
+    <p class="title">请输入反馈和举报信息</p>
+    <p class="textarea"><textarea class="init" ng-model="$parent.text"></textarea></p>
+  </div>
+</ion-content>
+<ion-footer-bar>
+  <button class="button button-style3 yellow" ng-click="submit()">确认</button>
+</ion-footer-bar>

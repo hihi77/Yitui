@@ -1,0 +1,18 @@
+<ion-header-bar class="bar-stable bar bar-header" align-title="center">
+  <button ng-click="backClick();" class="button back-button  buttons  button-clear header-item" >
+    <i class="icon ion-ios-arrow-back"></i>
+    后退
+  </button>
+  <div class="title title-center header-item" >
+    查看资料
+  </div>
+</ion-header-bar>
+<ion-content>
+  <div ng-include="'./templates/public/my-userInfo.html'"></div>
+</ion-content>
+<ion-footer-bar style="background: none">
+  <div class="buttonBox">
+    <button class="button button-left" ng-click="addFriends()">添加好友</button>
+    <button class="button button-right">发送消息</button>
+  </div>
+</ion-footer-bar>

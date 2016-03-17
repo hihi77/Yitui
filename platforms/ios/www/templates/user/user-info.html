@@ -1,0 +1,147 @@
+<ion-view view-title="我的资料">
+  <ion-content>
+    <div class="myInfo">
+      <div class="heard">
+        <p class="photo"><img src="{{userInfo.heardPhotoUrl}}"></p>
+        <p class="name">{{userInfo.name}}</p>
+        <p class="integrity">信息完整度({{userInfo.complete}}%)</p>
+      </div>
+      <ul class="list-style-D">
+        <li class="list-item">
+          <p class="leftText">昵称</p>
+          <div class="rightText"><input  ng-model="userInfo.nickname" ng-blur="update('nickname',userInfo.nickname)" class="init"></div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <li class="list-item">
+          <p class="leftText">真实姓名</p>
+          <div class="rightText"><input ng-model="userInfo.name" ng-blur="update('name',userInfo.name)" class="init"></div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <li class="list-item">
+          <p class="leftText">性别</p>
+          <div class="rightText">
+            <select class="init" ng-model="userInfo.sex" ng-change="update('sex',userInfo.sex)">
+              <option  >男</option>
+              <option  >女</option>
+            </select>
+          </div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <li class="list-item">
+          <p class="leftText">出生年份</p>
+          <div class="rightText">
+            <select class="init" ng-model="userInfo.birthDate" ng-change="update('birthDate',userInfo.birthDate)">
+              <option ng-repeat="yerd in yerds">{{yerd}}</option>
+            </select>
+            <i class="ion-edit  icon-right"></i>
+          </div>
+        </li>
+        <a href="#/tab/user/user-selectArea">
+          <li class="list-item">
+            <p class="leftText">所在地区</p>
+            <div class="rightText">
+              {{userInfo.area}}
+            </div>
+            <i class="ion-chevron-right  icon-right"></i>
+          </li>
+        </a>
+        <li class="list-item">
+          <p class="leftText">手机号码</p>
+          <div class="rightText">
+            <input ng-model="userInfo.phone" ng-blur="update('phone',userInfo.phone)" class="init">
+          </div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <li class="list-item">
+          <p class="leftText">电子邮箱</p>
+          <div class="rightText">
+            <input ng-model="userInfo.email" ng-blur="update('email',userInfo.email)" class="init">
+          </div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+      </ul>
+      <ul class="list-style-D">
+        <li class="list-item">
+          <p class="leftText">当前公司</p>
+          <div class="rightText"><input class="init" ng-blur="update('currentCompany',userInfo.currentCompany)" ng-model="userInfo.currentCompany"></div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <a href="#/tab/user/user-trade"><li class="list-item">
+          <p class="leftText">当前行业</p>
+          <div class="rightText">{{userInfo.currentTrade}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-occupation"><li class="list-item">
+          <p class="leftText">当前职能</p>
+          <div class="rightText">{{userInfo.currentFunction}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+      </ul>
+      <ul class="list-style-D">
+        <a href="#/tab/user/user-beGoodAt">
+          <li class="list-item">
+            <p class="leftText">擅长技能</p>
+            <div class="rightText">{{userInfo.goodSkill}}</div>
+            <i class="ion-chevron-right  icon-right"></i>
+          </li>
+        </a>
+        <a href="#/tab/user/user-interest">
+          <li class="list-item">
+            <p class="leftText">兴趣爱好</p>
+            <div class="rightText">{{userInfo.hobbiesAndInterests}}</div>
+            <i class="ion-chevron-right  icon-right"></i>
+          </li>
+        </a>
+        <a href="#/tab/user/user-workExperience/{{$index}}" ng-repeat="noe in userInfo.workExperience"><li class="list-item">
+          <p class="leftText">工作经历{{$index+1}}</p>
+          <div class="rightText">{{noe.corporateName}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-workExperience/new"><li class="list-item">
+          <p class="leftText">工作经历</p>
+          <div class="rightText">添加</div>
+          <i class="ion-plus-circled  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-projectExperience/{{$index}}" ng-repeat="noe in userInfo.projectExperience"><li class="list-item">
+          <p class="leftText">项目经验{{$index+1}}</p>
+          <div class="rightText">{{noe.projectName}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-projectExperience/new"><li class="list-item">
+          <p class="leftText">项目经验</p>
+          <div class="rightText">新加</div>
+          <i class="ion-plus-circled  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-educationalBackground/{{$index}}" ng-repeat="noe in userInfo.educationalBackground"><li class="list-item">
+          <p class="leftText">教育背景{{$index+1}}</p>
+          <div class="rightText">{{noe.schoolName}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-educationalBackground/new"><li class="list-item">
+          <p class="leftText">教育背景</p>
+          <div class="rightText">新加</div>
+          <i class="ion-plus-circled  icon-right"></i>
+        </li></a>
+        <a href="#/tab/user/user-language"><li class="list-item">
+          <p class="leftText">语言能力</p>
+          <div class="rightText">{{userInfo.linguisticCapacit}}</div>
+          <i class="ion-chevron-right  icon-right"></i>
+        </li></a>
+        <li class="list-item">
+          <p class="leftText">自我评价</p>
+          <div class="rightText" style="height: 90px;">
+            <textarea ng-blur="update('selfAssessment',userInfo.selfAssessment)" ng-model="userInfo.selfAssessment" class="init"></textarea>
+          </div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+        <li class="list-item">
+          <p class="leftText">附加信息</p>
+          <div class="rightText" style="height: 90px;">
+            <textarea ng-blur="update('extraMessage',userInfo.extraMessage)" ng-model="userInfo.extraMessage" class="init"></textarea>
+          </div>
+          <i class="ion-edit  icon-right"></i>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

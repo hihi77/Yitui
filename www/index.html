@@ -2,32 +2,77 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/ionicons.css" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/ionicons.css" rel="stylesheet" type="text/css"/>
 
-    <link href="css/style.css" rel="stylesheet">
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="http://cdn.ronghub.com/RongIMLib-2.0.12.min.js"></script>
+  <script src="http://cdn.ronghub.com/RongEmoji-2.0.3.min.js"></script>
+  <script src="js/public/rongIMClient.js"></script>
 </head>
 
-<body ng-app="starter">
-<ion-nav-bar class="bar-stable">
-    <ion-nav-back-button ng-click="backClick();">
-    </ion-nav-back-button>
-    <ion-nav-buttons side="right">
-        <button class="button" ng-click="toolClick();" ng-show="navRightButtonText?true:false">
-            {{navRightButtonText}}
+<body ng-app="starter" ng-controller="overstory">
+<div class="mainContainer  {{publishLayerEs?'blur':''}}">
+  <ion-nav-view>
+    <ion-nav-bar class="bar-stable" ng-show="showNavBar">
+      <ion-nav-back-button ng-click="backClick();">
+        后退
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        <button class="button" ng-click="toolClick();" ng-show="(navRightButtonText||navRightIonicClass)?true:false">
+          {{navRightButtonText}}
+          <i ng-class="navRightIonicClass"></i>
         </button>
-    </ion-nav-buttons>
-</ion-nav-bar>
-<ion-nav-view></ion-nav-view>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  </ion-nav-view>
+</div>
+<!--
+发布按钮事件的浮层
+-->
+<div class="publishLayer ng-hide" ng-show="publishLayerShow">
+  <div class="publishFunctionBox" ng-click="publishLayerHideEvent()">
+    <div class="close circleIcon" ng-show="publishLayerEs">
+      <i class="ion-close-round icon"></i>
+    </div>
+    <a href="#/tab/toHire-publish">
+      <div class="circleIcon transition_3 toHireButton {{publishLayerEs?'':'initTranslate'}}">
+        <i class="icon ion-android-wifi"></i>
+        <p class="text">才聘</p>
+      </div>
+    </a>
+    <a href="#/tab/activity-publish">
+      <div class="circleIcon transition_3 activityButton {{publishLayerEs?'':'initTranslate'}}">
+        <i class="icon ion-ios-pulse-strong"></i>
+        <p class="text">活动</p>
+      </div>
+    </a>
+    <a href="#/tab/information-publish">
+      <div class="circleIcon transition_3 informationButton {{publishLayerEs?'':'initTranslate'}}">
+        <i class="icon ion-eye"></i>
+        <p class="text">信息</p>
+      </div>
+    </a>
+    <a href="#/tab/investigate-publish">
+      <div class="circleIcon transition_3 investigateButton {{publishLayerEs?'':'initTranslate'}}">
+        <i class="icon ion-ios-color-wand"></i>
+        <p class="text">调查</p>
+      </div>
+    </a>
+  </div>
+</div>
 </body>
 <!-- app's js -->
 <script src="js/public/app.js"></script>
 <script src="js/public/service.js"></script>
+<script src="js/login/loginControllers.js"></script>
+<script src="js/login/loginServices.js"></script>
 <!--发布->才聘模块-->
 <script src="js/publish/toHireDirective.js"></script>
 <script src="js/publish/toHireControllers.js"></script>
@@ -47,5 +92,17 @@
 <script src="js/publish/investigateDirective.js"></script>
 <script src="js/publish/investigateControllers.js"></script>
 <script src="js/publish/investigateServices.js"></script>
+<!--end-->
+<!--我的模块 user-->
+<script src="js/user/userControllers.js"></script>
+<script src="js/user/userServices.js"></script>
+<!--end-->
+<!--发现模块 discover-->
+<script src="js/discover/discoverControllers.js"></script>
+<script src="js/discover/discoverServices.js"></script>
+<!--end-->
+<!--圈子模块 circle-->
+<script src="js/circle/circleControllers.js"></script>
+<script src="js/circle/circleServices.js"></script>
 <!--end-->
 </html>

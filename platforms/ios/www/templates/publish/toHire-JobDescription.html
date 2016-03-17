@@ -1,0 +1,12 @@
+<ion-view view-title="{{config.title}}">
+    <ion-content>
+        <div class="jobDescription">
+            <h1 class="jobDescription-title">综合管理部：</h1>
+            <div class="text-input">
+                <textarea class="init" id="text" ng-keydown="keydownEvent()">{{ephemeralData[type].text}}</textarea>
+            </div>
+            <div class="surplus">{{maxTextLength}}/500</div>
+        </div>
+        <hr>
+    </ion-content>
+</ion-view>

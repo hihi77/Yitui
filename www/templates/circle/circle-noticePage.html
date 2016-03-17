@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="bar-stable bar bar-header" align-title="center">
+    <button ng-click="backClick();" class="button back-button  buttons  button-clear header-item" >
+      <i class="icon ion-ios-arrow-back"></i>
+      后退
+    </button>
+    <div class="title title-center header-item" >
+      通知
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="noticePage">
+      <ul class="list-notice">
+        <li class="list-item" ng-repeat="data in notice">
+          <h1 class="title" ng-bind="data.title"></h1>
+          <p class="text" ng-bind="data.text"></p>
+          <p class="foot-info">
+            <span class="name" ng-bind="data.name"></span>
+            <span class="time" ng-bind="data.date"></span>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+  <ion-header-bar class="bar-stable bar bar-header" align-title="center">
+    <button ng-click="backClick();" class="button back-button  buttons  button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+      后退
+    </button>
+    <div class="title title-center header-item">
+      圈子成员
+    </div>
+    <div class="buttons buttons-right header-item"><span class="right-buttons">
+        <button class="button ng-binding ng-hide" ng-click="toolClick();"
+                ng-show="(navRightButtonText||navRightIonicClass)?true:false">
+          {{navRightButtonText}}
+          <i ng-class="navRightIonicClass" class=""></i>
+        </button>
+      </span></div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="member">
+      <div search>
+
+      </div>
+      <ul class="list-style-member">
+        <li class="list-title" ng-click="show.part=!show.part">
+          群主管理员({{allUser.authority.length}}人)
+          <i class="{{show.part?'ion-ios-arrow-down':'ion-ios-arrow-up'}} icon-right"></i>
+        </li>
+        <a href="#/circle-userInfo/{{userInfo.userId}}" ng-repeat="userInfo in allUser.authority" ng-show="show.part"><li class="list-item">
+          <p class="photo"><img src="{{userInfo.heardPhotoUrl}}"></p>
+          <p class="name textOverHide" ng-bind="userInfo.name"></p>
+          <p class="duty manage" ng-bind="userInfo.authority"></p>
+        </li></a>
+      </ul>
+      <ul class="list-style-member">
+        <li class="list-title" ng-click="show.all=!show.all">
+          普通成员({{allUser.common.length}}人)
+          <i class="{{show.all?'ion-ios-arrow-down':'ion-ios-arrow-up'}} icon-right"></i>
+        </li>
+        <a href="#/circle-userInfo/{{userInfo.userId}}" ng-repeat="userInfo in allUser.common" ng-show="show.all"><li class="list-item">
+          <p class="photo"><img src="{{userInfo.heardPhotoUrl}}"></p>
+          <p class="name textOverHide" ng-bind="userInfo.name"></p>
+        </li></a>
+      </ul>
+    </div>
+  </ion-content>

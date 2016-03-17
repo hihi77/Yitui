@@ -1,0 +1,17 @@
+<ul class="investigate-list">
+  <li class="list-item-investigate" ng-repeat="data in nowData">
+    <div class="infoBox">
+      <div class="title">
+        {{data.source}}
+      </div>
+      <div class="info">
+        <p class="leftText">发布：{{data.startTime}}</p>
+        <p class="rightText"><i class="blue">赏金:</i>&nbsp;&nbsp;&nbsp;{{data.moneyReward}}元</p>
+      </div>
+      <div class="info">
+        <p class="leftText">截止：{{data.endTime}}</p>
+        <p class="rightText">限额:&nbsp;&nbsp;&nbsp;{{data.alreadyPortion}}/{{data.maxPortion}}份</p>
+      </div>
+    </div>
+  </li>
+</ul>

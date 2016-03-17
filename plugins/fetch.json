@@ -40,17 +40,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "xu.li.cordova.wechat": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/xu-li/cordova-plugin-wechat",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {
-            "WECHATAPPID": "wx45901e676c0ff12a"
-        }
-    },
     "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
@@ -66,5 +55,23 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-wechat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-wechat"
+        },
+        "is_top_level": true,
+        "variables": {
+            "WECHATAPPID": "wx79bcf8b025734922"
+        }
     }
 }

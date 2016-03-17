@@ -1,0 +1,22 @@
+<ion-view view-title="通讯录">
+  <ion-content>
+    <div class="user-addressList">
+      <div class="search">
+        <div class="searchInput">
+          <i class="icon ion-search"></i>
+          <input class="init" ng-model="$parent.searchText" ng-keydown="searchKeyDown()" placeholder="搜索">
+        </div>
+      </div>
+      <ion-list ng-repeat="(key,value) in userFriends" ng-if="value.length">
+        <div class="letter">{{key}}</div>
+        <ion-item  class="item-remove-animate" ng-repeat="noe in value" ng-show="!noe.hide">
+          <div class="heardPhone"><img ng-src="{{noe.heardPhotoUrl}}"></div>
+          <div class="name">{{noe.nickname}}</div>
+          <ion-option-button class="button-assertive" ng-click="deleteFriend(noe)">
+            删除
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

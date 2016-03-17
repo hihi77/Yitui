@@ -1,0 +1,70 @@
+<div class="myInfo">
+  <div class="heard">
+    <p class="photo"><img src="{{userInfo.heardPhotoUrl}}"></p>
+    <p class="name">{{userInfo.name}}</p>
+  </div>
+  <ul class="list-style-D">
+    <li class="list-item">
+      <p class="leftText">昵称</p>
+      <div class="rightText"><input  readonly="readonly"  ng-model="userInfo.nickname" class="init"></div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">真实姓名</p>
+      <div class="rightText"><input  readonly="readonly"  ng-model="userInfo.name"  class="init"></div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">性别</p>
+      <div class="rightText">
+        {{userInfo.sex}}
+      </div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">出生年份</p>
+      <div class="rightText">
+        {{userInfo.birthDate}}
+      </div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">所在地区</p>
+      <div class="rightText">
+        {{userInfo.area}}
+      </div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">手机号码</p>
+      <div class="rightText">
+        <input  readonly="readonly"  ng-model="userInfo.phone" class="init">
+      </div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">电子邮箱</p>
+      <div class="rightText">
+        <input  readonly="readonly"  ng-model="userInfo.email"class="init">
+      </div>
+    </li>
+  </ul>
+  <ul class="list-style-D">
+    <li class="list-item">
+      <p class="leftText">当前公司</p>
+      <div class="rightText"><input  readonly="readonly"  class="init" ng-blur="update('currentCompany',userInfo.currentCompany)" ng-model="userInfo.currentCompany"></div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">当前行业</p>
+      <div class="rightText">{{userInfo.currentTrade}}</div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">当前职能</p>
+      <div class="rightText">{{userInfo.currentFunction}}</div>
+    </li>
+  </ul>
+  <ul class="list-style-D">
+    <li class="list-item">
+      <p class="leftText">擅长技能</p>
+      <div class="rightText">{{userInfo.goodSkill}}</div>
+    </li>
+    <li class="list-item">
+      <p class="leftText">兴趣爱好</p>
+      <div class="rightText">{{userInfo.hobbiesAndInterests}}</div>
+    </li>
+  </ul>
+</div>

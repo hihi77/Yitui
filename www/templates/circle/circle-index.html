@@ -1,0 +1,53 @@
+<ion-view view-title="圈子">
+  <ion-content>
+    <div class="circleIndex">
+      <div class="search" search>
+
+      </div>
+      <ion-slide-box does-continue="true" slide-interval="3000">
+        <ion-slide ng-repeat="url in circleData.bannerImagesUrl">
+          <div class="slideBox"><img src="{{url}}"></div>
+        </ion-slide>
+      </ion-slide-box>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">我的圈子</p>
+            <a href="#/tab/circle-myCircle"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="circle-list">
+          <a href="#/circle-enterTheCircle/{{data.circleId}}" ng-repeat="data in circleData.myCircle"><li class="list-item">
+            <div class="noeCircle">
+              <p class="image"><img src="{{data.photoUrl}}"></p>
+              <p class="name textOverHide" ng-bind="data.title"></p>
+            </div>
+          </li></a>
+          <li class="list-item">
+            <a href="#/tab/circle-addCircle"><div class="noeCircle noeCircle-icon">
+              <p class="image image-icon">
+                <i class="ion-plus-round icon" ></i>
+              </p>
+            </div></a>
+          </li>
+        </ul>
+      </div>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">热门圈子</p>
+            <a href="#/tab/circle-hotCircle"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="circle-list">
+          <a href="#/circle-enterTheCircle/{{data.circleId}}" ng-repeat="data in circleData.hotCircle"><li class="list-item">
+            <div class="noeCircle">
+              <p class="image"><img src="{{data.photoUrl}}"></p>
+              <p class="name textOverHide" ng-bind="data.title"></p>
+            </div>
+          </li></a>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ul class="toHire-list">
+  <a href="#/tab/{{pageMarking}}/{{pageMarking}}-toHire-detailed/{{data.id}}"  ng-repeat="data in toHires" ng-show="!data.hide"><li class="list-item-toHire">
+    <div class="left-info">
+      <p class="title textOverHide">{{data.title}}</p>
+      <p class="info textOverHide">{{data.time}} | {{data.address}}</p>
+      <p class="info textOverHide">{{data.company}}</p>
+    </div>
+    <div class="right-info ">{{data.salary}}&nbsp;&nbsp;<i class="icon ion-chevron-right" style="color: #444"></i></div>
+  </li></a>
+</ul>

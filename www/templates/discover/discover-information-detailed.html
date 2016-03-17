@@ -1,0 +1,67 @@
+<ion-view view-title="信息">
+  <ion-content style="position: relative">
+    <ul class="information-list information-list-detailed">
+      <li class="list-item-information">
+        <div class="heardInfo">
+          <div class="photo"><img src="{{data.heardPhotoUrl}}"></div>
+          <div class="info">
+            <p class="name">{{data.name}}</p>
+            <p class="time">{{data.ago}}</p>
+          </div>
+        </div>
+        <p class="title ng-binding">{{data.title}}</p>
+        <p class="text ng-binding">{{data.text}}</p>
+        <div class="imageBox">
+          <p class="image" ng-repeat="url in data.images"><img src="{{url}}"></p>
+        </div>
+        <div class="message">
+          <p class="text-message">{{data.browse}}人看过 {{data.clickALike}}个赞</p>
+          <div class="imageBox">
+            <p class="assist"><i class="ion-thumbsup"></i></p>
+            <div>
+              <p class="img" ng-repeat="url in data.heardPhotos"><img src="{{url}}"></p>
+            </div>
+            <div class="more" ng-click="moreBoxShow=!moreBoxShow">
+              <i class="ion-more"></i>
+              <div class="moreBox ng-hide" ng-show="moreBoxShow">
+                <p class="more-button" ng-click="clickALike()">点赞</p>
+                <p class="more-button" ng-click="comment()">评论</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul class="comment-list">
+      <li class="comment-count">{{data.comment}}条评论</li>
+      <li class="list-item" ng-repeat="noe in data.commentInfo">
+        <p class="photo"><img src="{{noe.heardPhoto}}"></p>
+        <div class="comment-box">
+          <div class="comment-content">
+            <p class="name">{{noe.name}}</p>
+            <p class="comment-text">{{noe.text}}</p>
+          </div>
+        </div>
+        <p class="date">02-16</p>
+      </li>
+    </ul>
+  </ion-content>
+  <div class="input-comment transition_3 {{commentEmojisShow?'show':''}}" ng-show="!commentShow">
+
+    <div class="inputBox">
+      <p class="input"><input placeholder="请输入评论" class="init" ng-model="commentText" id="inputComment"></p>
+      <i class="ion-happy-outline icon-right" ng-click="commentEmojisShow=!commentEmojisShow"></i>
+    </div>
+    <div class="expressionBox">
+      <ion-slide-box>
+        <ion-slide ng-repeat="array in emojis">
+          <div class="noeExpressionBox"  ng-repeat="noe in array" ng-click="clickEmojis(noe)">
+            <p class="noeExpression">
+              {{noe}}
+            </p>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+  </div>
+</ion-view>

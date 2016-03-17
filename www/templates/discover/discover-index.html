@@ -1,0 +1,121 @@
+<ion-view view-title="发现">
+  <ion-content>
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <p class="center" ng-show="!discoverData">请下拉重新获取数据...</p>
+    <div class="discover">
+      <ion-slide-box does-continue="true" slide-interval="3000">
+        <ion-slide ng-repeat="url in discoverData.heardPhoto">
+          <div class="slideBox"><img src="{{url}}"></div>
+        </ion-slide>
+      </ion-slide-box>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">活动</p>
+            <a href="#/tab/discover-activity"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="activity-list">
+          <a href="#/tab/discover/discover-signUp-detailed/{{data.id}}" ng-repeat="data in discoverData.activityData"><li class="list-item-activity">
+            <div class="pdiscoverhoto">
+              <img src="{{data.phoneUrl}}">
+            </div>
+            <div class="content">
+              <p class="title ">{{data.title}}</p>
+              <p class="info textOverHide ">{{data.time}} {{data.address}}</p>
+              <div class="prompt">
+                <p class="prompt-left ">{{data.price}}元</p>
+                <p class="prompt-left ">{{data.applicants}}人报名</p>
+                <p class="prompt-right blue">报名</p>
+              </div>
+            </div>
+          </li></a>
+        </ul>
+      </div>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">才聘</p>
+            <a href="#/tab/discover/discover-toHire-more"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="toHire-list">
+          <a href="#/tab/discover/discover-toHire-detailed/{{data.id}}" ng-repeat="data in discoverData.toHireData"><li class="list-item-toHire">
+            <div class="left-info">
+              <p class="title textOverHide">{{data.title}}</p>
+              <p class="info textOverHide">{{data.time}} | {{data.address}}</p>
+              <p class="info textOverHide">{{data.company}}</p>
+            </div>
+            <div class="right-info">{{data.salary}}</div>
+          </li></a>
+        </ul>
+      </div>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">调查</p>
+            <a href="#/tab/discover-questionnaire"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="investigate-list">
+          <a href="#/tab/discover-questionnaireSurvey/{{data.id}}" ng-repeat="data in discoverData.investigateData"><li class="list-item-investigate">
+            <div class="infoBox">
+              <div class="title ng-binding">
+                {{data.source}}
+              </div>
+              <div class="info">
+                <p class="leftText ng-binding">发布：{{data.startTime}}</p>
+                <p class="rightText ng-binding blue">赏金:&nbsp;&nbsp;&nbsp;{{data.moneyReward}}元</p>
+              </div>
+              <div class="info">
+                <p class="leftText ng-binding">截止：{{data.endTime}}</p>
+                <p class="rightText ng-binding">限额:&nbsp;&nbsp;&nbsp;{{data.alreadyPortion}}/{{data.maxPortion}}份</p>
+              </div>
+            </div>
+          </li></a>
+        </ul>
+      </div>
+      <div class="module">
+        <div class="module-title">
+          <div class="box">
+            <p class="text">信息</p>
+            <a href="#/tab/discover-information-more"><p class="more">更多</p></a>
+          </div>
+        </div>
+        <ul class="information-list">
+          <a href="#/tab/discover-information-detailed/{{data.id}}" ng-repeat="data in discoverData.informationData"><li class="list-item-information">
+            <div class="heardInfo">
+              <div class="photo"><img src="{{data.heardPhotoUrl}}"></div>
+              <div class="info">
+                <p class="name">{{data.name}}</p>
+                <p class="time">{{data.ago}}</p>
+              </div>
+            </div>
+            <p class="title ng-binding">{{data.title}}</p>
+            <p class="text ng-binding">{{data.text}}</p>
+            <div class="imageBox">
+              <p class="image" ng-repeat="url in data.images"><img src="{{url}}"></p>
+            </div>
+            <div class="component">
+              <p class="component-noe left">
+                <i class="ion-eye icon"></i>
+                {{data.browse}}
+              </p>
+              <p class="component-noe right">
+                <i class="ion-chatbubble-working icon"></i>
+                {{data.comment}}
+              </p>
+              <p class="component-noe right">
+                <i class="ion-thumbsup icon"></i>
+                {{data.clickALike}}
+              </p>
+            </div>
+          </li></a>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

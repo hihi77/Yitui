@@ -1,0 +1,27 @@
+<ion-view view-title="问卷调查">
+  <ion-content style="position: relative">
+    <div class="questionnaireSurvey">
+      <div class="herdPrompt">
+        <p class="left-text">{{data.source}}</p>
+        <p class="right-text">共{{data.questions.length}}题</p>
+      </div>
+      <div class="info">
+        <div class="noe">
+          <p class="left-text">赏金:{{data.moneyReward}}</p>
+          <p class="right-text">发布:{{data.startTime}}</p>
+        </div>
+        <div class="noe">
+          <p class="left-text">限额:{{data.alreadyPortion}}/{{data.maxPortion}}</p>
+          <p class="right-text">截止:{{data.endTime}}</p>
+        </div>
+      </div>
+      <div class="textBox">
+        <p class="title">尊敬的用户</p>
+        <p class="text">
+          您好，欢迎您注册使用。本app致力于为广大客户提供最优质的调研服务，热烈欢迎您加入到我们的行列中来，用您的看法和观点去改变世界，请认真回答下面的{{data.source}}问题调查问卷哦！
+        </p>
+      </div>
+      <a href="#/tab/{{pageMarking}}-question/0"><div class="foot-button button button-style1" style="top:{{top}}px">开始答卷</div></a>
+    </div>
+  </ion-content>
+</ion-view>

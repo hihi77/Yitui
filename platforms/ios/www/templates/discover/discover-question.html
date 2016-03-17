@@ -1,0 +1,32 @@
+<ion-view view-title="正在答题">
+  <ion-content>
+    <div class="question">
+      <p class="title">{{(sub+1)+'.'+question.question}}</p>
+      <div class="questionListBox">
+        <ul class="question-list">
+          <li class="list-item" ng-repeat="option in question.option" ng-click="listClick(option,$index)">
+            <!--ion-ios-circle-filled ion-ios-circle-outline-->
+            <!--ion-android-checkbox-outline-blank ion-android-checkbox-outline-->
+            <i class="{{option.pitchOn?noClass:offClass}}"></i>
+            &nbsp;
+            {{option.text}}
+          </li>
+        </ul>
+        <div class="text" ng-if="question.type=='问答'">
+          <textarea class="init" ng-model="question.text"></textarea>
+        </div>
+      </div>
+      <div class="foot-buttonBox" style="top:{{top}}px">
+        <a href="#/tab/{{pageMarking}}-question/{{sub+1}}"><div class="next" ng-show="sub==0">
+          下一题
+        </div></a>
+        <a href="#/tab/{{pageMarking}}-question/{{sub-1}}"><div class="buttons prev" ng-show="sub!=0">
+          上一题
+        </div></a>
+        <a href="{{sub==num?'':'#/tab/'+pageMarking+'-question/'+(sub+1)}}" ng-click="sub==num?submittedQuestionnaire():''"><div class="buttons next" ng-show="sub!=0">
+          {{sub==num?'完成':'下一题'}}
+        </div></a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
